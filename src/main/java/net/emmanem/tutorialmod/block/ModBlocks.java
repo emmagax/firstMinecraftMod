@@ -2,6 +2,7 @@ package net.emmanem.tutorialmod.block;
 
 
 import net.emmanem.tutorialmod.TutorialMod;
+import net.emmanem.tutorialmod.block.custom.MagicBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -36,6 +37,8 @@ public class ModBlocks {
             new ExperienceDroppingBlock(UniformIntProvider.create(2, 5),
                     AbstractBlock.Settings.create().strength(3f)
                             .requiresTool().sounds(BlockSoundGroup.DEEPSLATE)));
+    public static final Block MAGIC_BLOCK = registerBlock("magic_block",
+            new MagicBlock(AbstractBlock.Settings.create().strength(1f).requiresTool()));
 
     // HELPERS
 
@@ -61,6 +64,8 @@ public class ModBlocks {
            entries.add(ModBlocks.RAW_PINK_GARNET_BLOCK);
            entries.add(ModBlocks.PINK_GARNET_ORE);
            entries.add(ModBlocks.PINK_GARNET_DEEPSLATE_ORE);
+
+           entries.add(ModBlocks.MAGIC_BLOCK);
        });
 
        ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries ->  {
