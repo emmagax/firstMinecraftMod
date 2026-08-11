@@ -1,6 +1,7 @@
 package net.emmanem.tutorialmod;
 
 import net.emmanem.tutorialmod.block.ModBlocks;
+import net.emmanem.tutorialmod.component.ModDataComponentTypes;
 import net.emmanem.tutorialmod.item.ModItemGroups;
 import net.emmanem.tutorialmod.item.ModItems;
 import net.fabricmc.api.ModInitializer;
@@ -20,6 +21,8 @@ public class TutorialMod implements ModInitializer {
 		ModItemGroups.registerItemGroups();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+
+		ModDataComponentTypes.registerDataComponentTypes();
 
 		FuelRegistry.INSTANCE.add(ModItems.STARLIGHT_ASHES, 20000);
 	}
