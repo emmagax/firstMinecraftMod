@@ -21,9 +21,19 @@ public class ModItemGroups {
                     .entries((displayContext, entries) -> {
                         entries.add(ModItems.PINK_GARNET);
                         entries.add(ModItems.RAW_PINK_GARNET);
+
                         entries.add(ModItems.CHISEL);
                         entries.add(ModItems.CAULIFLOWER);
+
                         entries.add(ModItems.STARLIGHT_ASHES);
+
+                        entries.add(ModItems.PINK_GARNET_SWORD);
+                        entries.add(ModItems.PINK_GARNET_PICKAXE);
+                        entries.add(ModItems.PINK_GARNET_SHOVEL);
+                        entries.add(ModItems.PINK_GARNET_AXE);
+                        entries.add(ModItems.PINK_GARNET_HOE);
+
+
                     }).build());
 
     // Add Blocks Group
