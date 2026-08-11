@@ -4,6 +4,7 @@ import net.emmanem.tutorialmod.block.ModBlocks;
 import net.emmanem.tutorialmod.item.ModItemGroups;
 import net.emmanem.tutorialmod.item.ModItems;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.registry.FuelRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,5 +20,7 @@ public class TutorialMod implements ModInitializer {
 		ModItemGroups.registerItemGroups();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+
+		FuelRegistry.INSTANCE.add(ModItems.STARLIGHT_ASHES, 20000);
 	}
 }
