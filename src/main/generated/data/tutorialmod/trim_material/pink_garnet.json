@@ -1,0 +1,9 @@
+{
+  "asset_name": "pink_garnet",
+  "description": {
+    "color": "#B03F30",
+    "translate": "trim_material.tutorialmod.pink_garnet"
+  },
+  "ingredient": "tutorialmod:pink_garnet",
+  "item_model_index": 1.0
+}
