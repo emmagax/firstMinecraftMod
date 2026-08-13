@@ -1,6 +1,7 @@
 package net.emmanem.tutorialmod;
 
 import net.emmanem.tutorialmod.datagen.*;
+import net.emmanem.tutorialmod.enchantment.ModEnchantments;
 import net.emmanem.tutorialmod.trim.ModTrimMaterials;
 import net.emmanem.tutorialmod.trim.ModTrimPatterns;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
@@ -26,5 +27,7 @@ public class TutorialModDataGenerator implements DataGeneratorEntrypoint {
 	public void buildRegistry(RegistryBuilder registryBuilder) {
 		registryBuilder.addRegistry(RegistryKeys.TRIM_MATERIAL, ModTrimMaterials::bootstrap);
 		registryBuilder.addRegistry(RegistryKeys.TRIM_PATTERN, ModTrimPatterns::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.ENCHANTMENT, ModEnchantments::bootstrap);
+
 	}
 }

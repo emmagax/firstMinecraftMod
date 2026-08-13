@@ -3,6 +3,7 @@ package net.emmanem.tutorialmod;
 import net.emmanem.tutorialmod.block.ModBlocks;
 import net.emmanem.tutorialmod.component.ModDataComponentTypes;
 import net.emmanem.tutorialmod.effect.ModEffects;
+import net.emmanem.tutorialmod.enchantment.ModEnchantmentEffects;
 import net.emmanem.tutorialmod.item.ModItemGroups;
 import net.emmanem.tutorialmod.item.ModItems;
 import net.emmanem.tutorialmod.potion.ModPotions;
@@ -13,7 +14,6 @@ import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
-import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.passive.SheepEntity;
@@ -42,6 +42,8 @@ public class TutorialMod implements ModInitializer {
 
 		ModEffects.registerEffects();
 		ModPotions.registerPotions();
+
+		ModEnchantmentEffects.registerEnchantmentEffects();
 
 		FuelRegistry.INSTANCE.add(ModItems.STARLIGHT_ASHES, 20000);
 
