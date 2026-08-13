@@ -61,6 +61,12 @@
   "tooltip.tutorialmod.cauliflower.tooltip": "This is delicious!",
 
   "trim_material.tutorialmod_pink_garnet": "Pink Garnet Material",
-  "trim_pattern.tutorialmod.kaupen": "Kaupen Armor Pattern"
+  "trim_pattern.tutorialmod.kaupen": "Kaupen Armor Pattern",
 
+  "painting.tutorialmod.world.title": "World",
+  "painting.tutorialmod.world.author": "NanoAttack",
+  "painting.tutorialmod.shrimp.title": "Shrimp",
+  "painting.tutorialmod.shrimp.author": "NanoAttack",
+  "painting.tutorialmod.saw_them.title": "Saw Them",
+  "painting.tutorialmod.saw_them.author": "NanoAttack"
 }
