@@ -2,8 +2,10 @@ package net.emmanem.tutorialmod;
 
 import net.emmanem.tutorialmod.block.ModBlocks;
 import net.emmanem.tutorialmod.component.ModDataComponentTypes;
+import net.emmanem.tutorialmod.effect.ModEffects;
 import net.emmanem.tutorialmod.item.ModItemGroups;
 import net.emmanem.tutorialmod.item.ModItems;
+import net.emmanem.tutorialmod.sound.ModSounds;
 import net.emmanem.tutorialmod.util.HammerUsageEvent;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
@@ -33,6 +35,9 @@ public class TutorialMod implements ModInitializer {
 		ModBlocks.registerModBlocks();
 
 		ModDataComponentTypes.registerDataComponentTypes();
+		ModSounds.registerSounds();
+
+		ModEffects.registerEffects();
 
 		FuelRegistry.INSTANCE.add(ModItems.STARLIGHT_ASHES, 20000);
 
