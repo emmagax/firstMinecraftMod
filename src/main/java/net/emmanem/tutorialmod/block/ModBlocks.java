@@ -4,6 +4,7 @@ package net.emmanem.tutorialmod.block;
 import net.emmanem.tutorialmod.TutorialMod;
 import net.emmanem.tutorialmod.block.custom.MagicBlock;
 import net.emmanem.tutorialmod.block.custom.PinkGarnetLampBlock;
+import net.emmanem.tutorialmod.sound.ModSounds;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
@@ -37,7 +38,7 @@ public class ModBlocks {
                     AbstractBlock.Settings.create().strength(3f)
                             .requiresTool().sounds(BlockSoundGroup.DEEPSLATE)));
     public static final Block MAGIC_BLOCK = registerBlock("magic_block",
-            new MagicBlock(AbstractBlock.Settings.create().strength(1f).requiresTool()));
+            new MagicBlock(AbstractBlock.Settings.create().strength(1f).requiresTool().sounds(ModSounds.MAGIC_BLOCK_SOUNDS)));
 
     public static final Block PINK_GARNET_SLAB = registerBlock("pink_garnet_slab",
             new SlabBlock(AbstractBlock.Settings.create().strength(2f).requiresTool()));
@@ -86,15 +87,6 @@ public class ModBlocks {
        TutorialMod.LOGGER.info("Registering Mod Blocks for " + TutorialMod.MOD_ID);
 
        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries ->  {
-           entries.add(ModBlocks.PINK_GARNET_BLOCK);
-           entries.add(ModBlocks.RAW_PINK_GARNET_BLOCK);
-           entries.add(ModBlocks.PINK_GARNET_ORE);
-           entries.add(ModBlocks.PINK_GARNET_DEEPSLATE_ORE);
-
-           entries.add(ModBlocks.MAGIC_BLOCK);
-       });
-
-       ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries ->  {
            entries.add(ModBlocks.PINK_GARNET_ORE);
            entries.add(ModBlocks.PINK_GARNET_DEEPSLATE_ORE);
        });
