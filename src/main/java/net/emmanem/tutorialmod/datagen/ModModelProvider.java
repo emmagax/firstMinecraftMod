@@ -2,6 +2,7 @@ package net.emmanem.tutorialmod.datagen;
 
 import net.emmanem.tutorialmod.block.ModBlocks;
 import net.emmanem.tutorialmod.block.custom.CauliflowerCropBlock;
+import net.emmanem.tutorialmod.block.custom.HoneyBerryBushBlock;
 import net.emmanem.tutorialmod.block.custom.PinkGarnetLampBlock;
 import net.emmanem.tutorialmod.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -40,6 +41,8 @@ public class ModModelProvider extends FabricModelProvider {
                 .coordinate(BlockStateModelGenerator.createBooleanModelMap(PinkGarnetLampBlock.CLICKED, lampOnIdentifier, lampOffIdentifier)));
 
         blockStateModelGenerator.registerCrop(ModBlocks.CAULIFLOWER_CROP, CauliflowerCropBlock.AGE, 0, 1, 2, 3, 4, 5, 6);
+        blockStateModelGenerator.registerTintableCrossBlockStateWithStages(ModBlocks.HONEY_BERRY_BUSH, BlockStateModelGenerator.TintType.NOT_TINTED,
+                HoneyBerryBushBlock.AGE, 0, 1, 2, 3);
     }
 
     @Override
