@@ -7,6 +7,7 @@ import net.emmanem.tutorialmod.block.custom.HoneyBerryBushBlock;
 import net.emmanem.tutorialmod.block.custom.MagicBlock;
 import net.emmanem.tutorialmod.block.custom.PinkGarnetLampBlock;
 import net.emmanem.tutorialmod.sound.ModSounds;
+import net.emmanem.tutorialmod.world.tree.ModSaplingGenerator;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
@@ -88,6 +89,24 @@ public class ModBlocks {
 
     public static final Block HONEY_BERRY_BUSH = registerBlockWithoutBlockItem("honey_berry_bush",
             new HoneyBerryBushBlock(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)));
+
+    public static final Block DRIFTWOOD_LOG = registerBlock("driftwood_log",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_LOG)));
+    public static final Block DRIFTWOOD_WOOD = registerBlock("driftwood_wood",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_DRIFTWOOD_LOG = registerBlock("stripped_driftwood_log",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_DRIFTWOOD_WOOD = registerBlock("stripped_driftwood_wood",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block DRIFTWOOD_PLANKS = registerBlock("driftwood_planks",
+            new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS)));
+    public static final Block DRIFTWOOD_LEAVES = registerBlock("driftwood_leaves",
+            new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block DRIFTWOOD_SAPLING = registerBlock("driftwood_sapling",
+            new SaplingBlock(ModSaplingGenerator.DRIFTWOOD, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
+
 
     // HELPERS
 

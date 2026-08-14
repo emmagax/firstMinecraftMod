@@ -1,4 +1,5 @@
-// 1.21	2026-08-14T14:33:40.8967105	Tutorial Mod/Tags for minecraft:block
+// 1.21	2026-08-14T16:03:25.9986367	Tutorial Mod/Tags for minecraft:block
+2aea14bcf6e0112aa2f69d63beab9d27793a3eb3 data\minecraft\tags\block\logs_that_burn.json
 079e21ee82e19be3b06c0ad61d06e9bdce588108 data\minecraft\tags\block\needs_iron_tool.json
 c07c4c3be2f1e2228e70cca883d68ce9bd7ba47e data\tutorialmod\tags\block\needs_pink_garnet_tool.json
 f30a6367dbc22bbef01d6bf2a992f645005f83b5 data\minecraft\tags\block\needs_diamond_tool.json
