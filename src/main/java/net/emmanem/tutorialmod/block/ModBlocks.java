@@ -2,10 +2,7 @@ package net.emmanem.tutorialmod.block;
 
 
 import net.emmanem.tutorialmod.TutorialMod;
-import net.emmanem.tutorialmod.block.custom.CauliflowerCropBlock;
-import net.emmanem.tutorialmod.block.custom.HoneyBerryBushBlock;
-import net.emmanem.tutorialmod.block.custom.MagicBlock;
-import net.emmanem.tutorialmod.block.custom.PinkGarnetLampBlock;
+import net.emmanem.tutorialmod.block.custom.*;
 import net.emmanem.tutorialmod.sound.ModSounds;
 import net.emmanem.tutorialmod.world.tree.ModSaplingGenerator;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -105,7 +102,7 @@ public class ModBlocks {
             new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)));
 
     public static final Block DRIFTWOOD_SAPLING = registerBlock("driftwood_sapling",
-            new SaplingBlock(ModSaplingGenerator.DRIFTWOOD, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
+            new ModSaplingBlock(ModSaplingGenerator.DRIFTWOOD, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING), Blocks.RED_SAND));
 
 
     // HELPERS
