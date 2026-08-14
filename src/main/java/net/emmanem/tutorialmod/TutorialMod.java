@@ -9,6 +9,7 @@ import net.emmanem.tutorialmod.item.ModItems;
 import net.emmanem.tutorialmod.potion.ModPotions;
 import net.emmanem.tutorialmod.sound.ModSounds;
 import net.emmanem.tutorialmod.util.HammerUsageEvent;
+import net.emmanem.tutorialmod.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
@@ -45,6 +46,7 @@ public class TutorialMod implements ModInitializer {
 		ModPotions.registerPotions();
 
 		ModEnchantmentEffects.registerEnchantmentEffects();
+		ModWorldGeneration.generateModWorldGen();
 
 		FuelRegistry.INSTANCE.add(ModItems.STARLIGHT_ASHES, 20000);
 

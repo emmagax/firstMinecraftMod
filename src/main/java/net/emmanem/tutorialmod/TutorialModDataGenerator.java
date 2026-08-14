@@ -4,6 +4,8 @@ import net.emmanem.tutorialmod.datagen.*;
 import net.emmanem.tutorialmod.enchantment.ModEnchantments;
 import net.emmanem.tutorialmod.trim.ModTrimMaterials;
 import net.emmanem.tutorialmod.trim.ModTrimPatterns;
+import net.emmanem.tutorialmod.world.ModConfiguredFeatures;
+import net.emmanem.tutorialmod.world.ModPlacedFeatures;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.registry.RegistryBuilder;
@@ -28,6 +30,8 @@ public class TutorialModDataGenerator implements DataGeneratorEntrypoint {
 		registryBuilder.addRegistry(RegistryKeys.TRIM_MATERIAL, ModTrimMaterials::bootstrap);
 		registryBuilder.addRegistry(RegistryKeys.TRIM_PATTERN, ModTrimPatterns::bootstrap);
 		registryBuilder.addRegistry(RegistryKeys.ENCHANTMENT, ModEnchantments::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
 
 	}
 }
