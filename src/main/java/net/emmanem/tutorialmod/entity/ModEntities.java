@@ -11,7 +11,7 @@ import net.minecraft.util.Identifier;
 public class ModEntities {
     public static final EntityType<MantisEntity> MANTIS = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(TutorialMod.MOD_ID, "mantis"),
-            EntityType.Builder.create(MantisEntity::new, SpawnGroup.CREATURE)
+            EntityType.Builder.create(MantisEntity::new, SpawnGroup.AMBIENT)
                     .dimensions(1f, 2.5f).build());
 
 

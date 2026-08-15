@@ -19,11 +19,15 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Util;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeKeys;
 import org.jetbrains.annotations.Nullable;
 
 public class MantisEntity extends AnimalEntity {
@@ -126,8 +130,33 @@ public class MantisEntity extends AnimalEntity {
     @Override
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason,
                                  @Nullable EntityData entityData) {
-        MantisVariant variant = Util.getRandom(MantisVariant.values(), this.random);
-        setVariant(variant);
+
+        BlockPos currentPos = this.getBlockPos();
+        float roll = this.random.nextFloat(); // Generates a number between 0.0 and 1.0
+
+        // Safety check: Make sure the spawn coordinates are ready to be read
+        if (currentPos.getX() != 0 || currentPos.getZ() != 0) {
+            RegistryEntry<Biome> biome = world.getBiome(currentPos);
+
+            // If spawning in Eroded Badlands, make the Orchid variant common (60% chance)
+            if (biome.matchesKey(BiomeKeys.ERODED_BADLANDS)) {
+                if (roll < 0.60f) {
+                    setVariant(MantisVariant.ORCHID);
+                } else {
+                    setVariant(MantisVariant.DEFAULT);
+                }
+                return super.initialize(world, difficulty, spawnReason, entityData);
+            }
+        }
+
+        // Everywhere else (Badlands and Wooded Badlands), it is always the Default variant
+        setVariant(MantisVariant.DEFAULT);
         return super.initialize(world, difficulty, spawnReason, entityData);
+    }
+
+    @Override
+    public boolean cannotDespawn() {
+        // Returns true so they stay in the world forever, just like standard cows or sheep
+        return true;
     }
 }
