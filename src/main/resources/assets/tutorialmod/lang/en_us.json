@@ -31,6 +31,8 @@
   "item.tutorialmod.honey_berries": "Honey Berries",
   "block.tutorialmod.honey_berry_bush": "Honey Berry Bush",
 
+  "item.tutorialmod.mantis_spawn_egg": "Mantis Spawn Egg",
+
   "block.tutorialmod.driftwood_log": "Driftwood Log",
   "block.tutorialmod.driftwood_wood": "Driftwood Wood",
   "block.tutorialmod.stripped_driftwood_log": "Stripped Driftwood Log",
@@ -88,5 +90,8 @@
   "painting.tutorialmod.shrimp.title": "Shrimp",
   "painting.tutorialmod.shrimp.author": "NanoAttack",
   "painting.tutorialmod.saw_them.title": "Saw Them",
-  "painting.tutorialmod.saw_them.author": "NanoAttack"
+  "painting.tutorialmod.saw_them.author": "NanoAttack",
+
+  "entity.tutorialmod.mantis": "Mantis",
+
 }

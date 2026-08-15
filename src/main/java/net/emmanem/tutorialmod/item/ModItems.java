@@ -2,6 +2,7 @@ package net.emmanem.tutorialmod.item;
 
 import net.emmanem.tutorialmod.TutorialMod;
 import net.emmanem.tutorialmod.block.ModBlocks;
+import net.emmanem.tutorialmod.entity.ModEntities;
 import net.emmanem.tutorialmod.item.custom.ChiselItem;
 import net.emmanem.tutorialmod.item.custom.HammerItem;
 import net.emmanem.tutorialmod.item.custom.ModArmorItem;
@@ -94,6 +95,9 @@ public class ModItems {
 
     public static final Item HONEY_BERRIES = registerItem("honey_berries",
             new AliasedBlockItem(ModBlocks.HONEY_BERRY_BUSH, new Item.Settings().food(ModFoodComponents.HONEY_BERRY)));
+
+    public static final Item MANTIS_SPAWN_EGG = registerItem("mantis_spawn_egg",
+            new SpawnEggItem(ModEntities.MANTIS, 0x9dc783, 0xbfaf5f, new Item.Settings()));
 
     // HELPERS
     // Register Items
