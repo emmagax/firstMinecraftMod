@@ -17,17 +17,10 @@ public class ModEntitySpawns {
         BiomeModifications.addSpawn(BiomeSelectors.includeByKey(BiomeKeys.ERODED_BADLANDS, BiomeKeys.BADLANDS, BiomeKeys.WOODED_BADLANDS),
                 SpawnGroup.AMBIENT, ModEntities.MANTIS, 90, 1, 2);
 
-        SpawnRestriction.register(
-                ModEntities.MANTIS,
-                SpawnLocationTypes.ON_GROUND,
-                Heightmap.Type.MOTION_BLOCKING_NO_LEAVES,
+        SpawnRestriction.register(ModEntities.MANTIS, SpawnLocationTypes.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES,
                 (entityType, world, spawnReason, pos, random) -> {
-                    // 1. ALLOW IT TO SPAWN ON TERRACOTTA & RED SAND (Just like an Armadillo)
                     boolean isValidFloor = world.getBlockState(pos.down()).isIn(BlockTags.ARMADILLO_SPAWNABLE_ON);
-
-                    // 2. CHECK DAYLIGHT (Standard creature daylight check)
                     boolean hasGoodLight = world.getLightLevel(pos) >= 9;
-
                     return isValidFloor && hasGoodLight;
                 }
         );

@@ -9,6 +9,7 @@ import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
@@ -21,6 +22,8 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.LocalDifficulty;
@@ -132,13 +135,11 @@ public class MantisEntity extends AnimalEntity {
                                  @Nullable EntityData entityData) {
 
         BlockPos currentPos = this.getBlockPos();
-        float roll = this.random.nextFloat(); // Generates a number between 0.0 and 1.0
+        float roll = this.random.nextFloat();
 
-        // Safety check: Make sure the spawn coordinates are ready to be read
         if (currentPos.getX() != 0 || currentPos.getZ() != 0) {
             RegistryEntry<Biome> biome = world.getBiome(currentPos);
 
-            // If spawning in Eroded Badlands, make the Orchid variant common (60% chance)
             if (biome.matchesKey(BiomeKeys.ERODED_BADLANDS)) {
                 if (roll < 0.60f) {
                     setVariant(MantisVariant.ORCHID);
@@ -149,14 +150,29 @@ public class MantisEntity extends AnimalEntity {
             }
         }
 
-        // Everywhere else (Badlands and Wooded Badlands), it is always the Default variant
         setVariant(MantisVariant.DEFAULT);
         return super.initialize(world, difficulty, spawnReason, entityData);
     }
 
     @Override
     public boolean cannotDespawn() {
-        // Returns true so they stay in the world forever, just like standard cows or sheep
         return true;
+    }
+
+    /* SOUNDS */
+
+    @Override
+    protected @Nullable SoundEvent getAmbientSound() {
+        return SoundEvents.ENTITY_PARROT_AMBIENT;
+    }
+
+    @Override
+    protected @Nullable SoundEvent getHurtSound(DamageSource source) {
+        return SoundEvents.ENTITY_ALLAY_HURT;
+    }
+
+    @Override
+    protected @Nullable SoundEvent getDeathSound() {
+        return SoundEvents.ENTITY_PANDA_DEATH;
     }
 }
